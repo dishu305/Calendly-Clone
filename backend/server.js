@@ -310,6 +310,11 @@ app.post('/api/public/:slug/book', async (req, res) => {
   });
 });
 
+app.get("/", (req, res) => {
+  res.send("Backend is running! Use /api routes.");
+});
+
+
 app.use((req, res) => {
   res.status(404).json({ error: `Route not found: ${req.method} ${req.path}` });
 });
