@@ -1,0 +1,12 @@
+[browser] Image with src "http://localhost:3000/vercel.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio. (file://C:/Users/Dishu/Desktop/Calendly-Clone/frontend/.next/dev/static/chunks/node_modules_next_dist_07p5au~._.js:3050:40)
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[browser] Uncaught TypeError: bookings.filter is not a function
+    at AdminDashboard (file://C:/Users/Dishu/Desktop/Calendly-Clone/frontend/.next/dev/static/chunks/_0edgs1c._.js?id=%255Bproject%255D%252Fapp%252Fadmin%252Fpage.tsx+%255Bapp-client%255D+%2528ecmascript%2529:126:39)
+^C

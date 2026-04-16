@@ -1,0 +1,102 @@
+const workflowSteps = [
+  {
+    number: '01',
+    title: 'Create event types',
+    description: 'Set up quick intro calls, paid sessions, or team meetings from one admin dashboard.',
+  },
+  {
+    number: '02',
+    title: 'Share your booking page',
+    description: 'Send one clean public link so people can pick a time without the usual back-and-forth.',
+  },
+  {
+    number: '03',
+    title: 'Stay organized',
+    description: 'Track bookings and keep every meeting flow visible from a single place.',
+  },
+];
+
+const highlights = [
+  'Fast event setup',
+  'Public booking links',
+  'Clean scheduling flow',
+];
+
+export default function Home() {
+  return (
+    <main className="landing-shell">
+      <section className="landing-hero">
+        <div className="landing-copy">
+          <p className="landing-eyebrow">Scheduling for modern teams</p>
+          <h1 className="landing-title">A sharper Calendly-style booking experience for your own workflow.</h1>
+          <p className="landing-description">
+            Create meeting types, share a polished booking link, and let people schedule without the
+            usual email ping-pong.
+          </p>
+
+          <div className="landing-actions">
+            <a href="/admin" className="landing-button landing-button-primary">
+              Open Admin Dashboard
+            </a>
+            <a
+              href="http://localhost:5000/api/test"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="landing-button landing-button-secondary"
+            >
+              Check Backend Status
+            </a>
+          </div>
+
+          <div className="landing-highlights" aria-label="Platform highlights">
+            {highlights.map((item) => (
+              <span key={item} className="landing-chip">
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="landing-showcase" aria-hidden="true">
+          <div className="landing-card landing-card-primary">
+            <p className="landing-card-label">This week</p>
+            <h2>12 bookings confirmed</h2>
+            <p>Keep event setup, availability, and booking links moving from one focused dashboard.</p>
+          </div>
+
+          <div className="landing-card-grid">
+            <div className="landing-card">
+              <p className="landing-stat">30 min</p>
+              <p className="landing-card-caption">Most-booked meeting</p>
+            </div>
+            <div className="landing-card">
+              <p className="landing-stat">3 steps</p>
+              <p className="landing-card-caption">From event creation to booking</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="landing-band">
+        <p>Built for quick setup, smoother scheduling, and easier sharing across your public booking flow.</p>
+      </section>
+
+      <section className="landing-workflow">
+        <div className="landing-section-heading">
+          <p className="landing-section-label">How it works</p>
+          <h2>Everything you need to launch a simple scheduling flow.</h2>
+        </div>
+
+        <div className="landing-step-grid">
+          {workflowSteps.map((step) => (
+            <article key={step.number} className="landing-step-card">
+              <p className="landing-step-number">{step.number}</p>
+              <h3>{step.title}</h3>
+              <p>{step.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+    </main>
+  );
+}

@@ -1,0 +1,6 @@
+
+> calendly-clone-backend@1.0.0 dev
+> node server.js
+
+Server is running on port 5000 using json storage
+Terminate batch job (Y/N)? 

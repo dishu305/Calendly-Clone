@@ -1,0 +1,109 @@
+{
+  "eventTypes": [
+    {
+      "id": 1,
+      "slug": "recruiter-demo-call",
+      "createdAt": "2026-04-16T01:28:51.171Z",
+      "name": "Recruiter Demo Call",
+      "duration": 30,
+      "availabilityStart": "09:00",
+      "availabilityEnd": "17:00",
+      "weekdaySchedules": [
+        {
+          "day": 0,
+          "enabled": false,
+          "start": "09:00",
+          "end": "17:00"
+        },
+        {
+          "day": 1,
+          "enabled": true,
+          "start": "10:00",
+          "end": "16:00"
+        },
+        {
+          "day": 2,
+          "enabled": true,
+          "start": "10:00",
+          "end": "16:00"
+        },
+        {
+          "day": 3,
+          "enabled": true,
+          "start": "11:00",
+          "end": "15:00"
+        },
+        {
+          "day": 4,
+          "enabled": true,
+          "start": "10:00",
+          "end": "16:00"
+        },
+        {
+          "day": 5,
+          "enabled": true,
+          "start": "10:00",
+          "end": "14:00"
+        },
+        {
+          "day": 6,
+          "enabled": false,
+          "start": "09:00",
+          "end": "17:00"
+        }
+      ],
+      "dateOverrides": [
+        {
+          "id": "override-demo",
+          "date": "2026-04-20",
+          "enabled": true,
+          "start": "12:00",
+          "end": "14:00"
+        }
+      ],
+      "bufferBeforeMinutes": 15,
+      "bufferAfterMinutes": 15,
+      "customQuestions": [
+        {
+          "id": "company",
+          "label": "What company are you with?",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "bookings": [
+    {
+      "id": 1,
+      "eventTypeId": 1,
+      "eventTypeName": "Recruiter Demo Call",
+      "name": "Ava Candidate",
+      "email": "ava@example.com",
+      "date": "2026-04-20",
+      "time": "12:00",
+      "customAnswers": [
+        {
+          "label": "What company are you with?",
+          "id": "company",
+          "answer": "OpenAI"
+        }
+      ],
+      "createdAt": "2026-04-16T01:29:09.886Z"
+    }
+  ],
+  "counters": {
+    "eventType": 2,
+    "booking": 2,
+    "notification": 2
+  },
+  "notifications": [
+    {
+      "id": 1,
+      "type": "booking_confirmation",
+      "recipient": "ava@example.com",
+      "subject": "Booking confirmed for Recruiter Demo Call",
+      "body": "Your meeting is booked for 2026-04-20 at 12:00.",
+      "createdAt": "2026-04-16T01:29:09.886Z"
+    }
+  ]
+}

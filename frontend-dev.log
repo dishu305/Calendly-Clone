@@ -1,0 +1,46 @@
+
+> frontend@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.3 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.56.1:3000
+✓ Ready in 1148ms
+Creating turbopack project {
+  dir: 'C:\\Users\\Dishu\\Desktop\\Calendly-Clone\\frontend',
+  testMode: true
+}
+
+ GET / 200 in 746ms (next.js: 455ms, application-code: 291ms)
+ GET / 200 in 65ms (next.js: 5ms, application-code: 60ms)
+ GET /admin 404 in 182ms (next.js: 132ms, application-code: 50ms)
+✓ Compiled in 636ms
+ GET / 200 in 302ms (next.js: 152ms, application-code: 151ms)
+ GET /admin 200 in 874ms (next.js: 807ms, application-code: 67ms)
+ GET /admin 200 in 81ms (next.js: 6ms, application-code: 75ms)
+ GET / 200 in 274ms (next.js: 63ms, application-code: 211ms)
+ GET / 200 in 113ms (next.js: 16ms, application-code: 97ms)
+ GET / 200 in 305ms (next.js: 18ms, application-code: 287ms)
+ GET /admin 200 in 388ms (next.js: 155ms, application-code: 233ms)
+○ Compiling /public/[slug] ...
+ GET /public/30-minute-intro-call 200 in 32.4s (next.js: 31.8s, application-code: 615ms)
+✓ Compiled in 3.3s
+ GET /admin 200 in 815ms (next.js: 315ms, application-code: 499ms)
+ GET /public/30-minute-intro-call 200 in 816ms (next.js: 512ms, application-code: 303ms)
+ GET /admin 200 in 162ms (next.js: 8ms, application-code: 155ms)
+ GET /public/30-minute-intro-call 200 in 96ms (next.js: 11ms, application-code: 86ms)
+ GET /admin 200 in 1463ms (next.js: 6ms, application-code: 1458ms)
+ GET /public/30-minute-intro-call 200 in 95ms (next.js: 30ms, application-code: 65ms)
+ GET /admin 200 in 233ms (next.js: 40ms, application-code: 193ms)
+ GET /admin 200 in 125ms (next.js: 48ms, application-code: 77ms)
+✓ Compiled in 1437ms
+✓ Compiled in 392ms
+✓ Compiled in 9.4s
+✓ Compiled in 1716ms
+ GET /admin 200 in 4.3s (next.js: 3.5s, application-code: 821ms)
+ GET /public/30-minute-intro-call 200 in 5.2s (next.js: 5.0s, application-code: 176ms)
+ GET /public/30-minute-intro-call 200 in 188ms (next.js: 43ms, application-code: 145ms)
+ GET /public/30-minute-intro-call 200 in 901ms (next.js: 53ms, application-code: 848ms)
+ GET /public/30-minute-intro-call 200 in 373ms (next.js: 140ms, application-code: 233ms)
+ GET /public/30-minute-intro-call 200 in 175ms (next.js: 4ms, application-code: 171ms)
+ GET /admin 200 in 1231ms (next.js: 91ms, application-code: 1140ms)
