@@ -65,7 +65,7 @@ export default function PublicBooking() {
         setLoadingSlots(true);
         setError('');
         const selectedDate = date.toISOString().split('T')[0];
-        const response = await fetch(`http://localhost:5000/api/public/${slug}/availability?date=${selectedDate}`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/public/${slug}/availability?date=${selectedDate}`);
 
         if (!response.ok) {
           const body: BookingErrorResponse = await response.json();
@@ -101,7 +101,7 @@ export default function PublicBooking() {
         answer: answers[question.id] || '',
       }));
 
-      const response = await fetch(`http://localhost:5000/api/public/${slug}/book`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/public/${slug}/book`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

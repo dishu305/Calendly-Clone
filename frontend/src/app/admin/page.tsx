@@ -28,7 +28,7 @@ export default function AdminDashboard() {
   useEffect(() => {
     const fetchEventTypes = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/event-types');
+        const response = await fetch('${process.env.NEXT_PUBLIC_API_BASE_URL}/api/event-types');
         const data: EventType[] = await response.json();
         setEventTypes(data);
       } catch (err) {
@@ -46,7 +46,7 @@ export default function AdminDashboard() {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:5000/api/event-types', {
+      const response = await fetch('${process.env.NEXT_PUBLIC_API_BASE_URL}/api/event-types', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -77,7 +77,7 @@ export default function AdminDashboard() {
     if (!confirm('Are you sure you want to delete this event?')) return;
 
     try {
-      await fetch(`http://localhost:5000/api/event-types/${id}`, {
+      await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/event-types/${id}`, {
         method: 'DELETE',
       });
       setEventTypes((current) => current.filter((event) => event.id !== id));

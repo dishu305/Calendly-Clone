@@ -116,9 +116,9 @@ export default function AdminDashboard() {
     const load = async () => {
       try {
         const [eventsRes, bookingsRes, notificationsRes] = await Promise.all([
-          fetch('http://localhost:5000/api/event-types'),
-          fetch('http://localhost:5000/api/bookings'),
-          fetch('http://localhost:5000/api/notifications'),
+          fetch('${process.env.NEXT_PUBLIC_API_BASE_URL}/api/event-types'),
+          fetch('${process.env.NEXT_PUBLIC_API_BASE_URL}/api/bookings'),
+          fetch('${process.env.NEXT_PUBLIC_API_BASE_URL}/api/notifications'),
         ]);
         setEventTypes((await eventsRes.json()) as EventType[]);
         setBookings((await bookingsRes.json()) as Booking[]);
@@ -144,7 +144,7 @@ export default function AdminDashboard() {
   };
 
   const reloadNotifications = async () => {
-    const response = await fetch('http://localhost:5000/api/notifications');
+    const response = await fetch('${process.env.NEXT_PUBLIC_API_BASE_URL}/api/notifications');
     setNotifications((await response.json()) as NotificationEntry[]);
   };
 
@@ -157,8 +157,8 @@ export default function AdminDashboard() {
       const isEditing = editingEventId !== null;
       const response = await fetch(
         isEditing
-          ? `http://localhost:5000/api/event-types/${editingEventId}`
-          : 'http://localhost:5000/api/event-types',
+          ? `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/event-types/${editingEventId}`
+          : `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/event-types`,
         {
           method: isEditing ? 'PUT' : 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -218,7 +218,7 @@ export default function AdminDashboard() {
 
   const handleDeleteEvent = async (id: number) => {
     if (!confirm('Are you sure you want to delete this event?')) return;
-    await fetch(`http://localhost:5000/api/event-types/${id}`, { method: 'DELETE' });
+    await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/event-types/${id}`, { method: 'DELETE' });
     setEventTypes((current) => current.filter((event) => event.id !== id));
     setBookings((current) => current.filter((booking) => booking.eventTypeId !== id));
     if (editingEventId === id) resetForm();
@@ -226,7 +226,7 @@ export default function AdminDashboard() {
 
   const handleCancelBooking = async (bookingId: number) => {
     if (!confirm('Cancel this meeting?')) return;
-    await fetch(`http://localhost:5000/api/bookings/${bookingId}`, { method: 'DELETE' });
+    await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/bookings/${bookingId}`, { method: 'DELETE' });
     setBookings((current) => current.filter((booking) => booking.id !== bookingId));
     await reloadNotifications();
   };

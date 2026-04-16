@@ -46,7 +46,7 @@ export default function PublicBooking() {
 
     const fetchEventAndSlots = async () => {
       try {
-        const eventResponse = await fetch('http://localhost:5000/api/event-types');
+        const eventResponse = await fetch('${process.env.NEXT_PUBLIC_API_BASE_URL}/api/event-types');
         const events: EventType[] = await eventResponse.json();
         const matchedEvent = events.find((event) => event.slug === slug);
 
@@ -79,7 +79,7 @@ export default function PublicBooking() {
     setError('');
 
     try {
-      const response = await fetch(`http://localhost:5000/api/public/${slug}/book`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/public/${slug}/book`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

@@ -72,8 +72,8 @@ npm run dev
 
 - Landing page: `http://localhost:3000`
 - Admin dashboard: `http://localhost:3000/admin`
-- Backend health: `http://localhost:5000/health`
-- Backend test route: `http://localhost:5000/api/test`
+- Backend health: `${process.env.NEXT_PUBLIC_API_BASE_URL}/health`
+- Backend test route: `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/test`
 
 ## Storage Modes
 

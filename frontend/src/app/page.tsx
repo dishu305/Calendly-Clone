@@ -39,7 +39,7 @@ export default function Home() {
               Open Admin Dashboard
             </a>
             <a
-              href="http://localhost:5000/health"
+              href="${process.env.NEXT_PUBLIC_API_BASE_URL}/health"
               target="_blank"
               rel="noopener noreferrer"
               className="landing-button landing-button-secondary"
