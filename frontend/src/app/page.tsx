@@ -1,3 +1,7 @@
+'use client';
+
+import { useState } from 'react';
+
 const workflowSteps = [
   {
     number: '01',
@@ -16,13 +20,24 @@ const workflowSteps = [
   },
 ];
 
-const highlights = [
-  'Fast event setup',
-  'Public booking links',
-  'Clean scheduling flow',
+const repoTopics = [
+  'scheduling',
+  'calendar',
+  'availability',
+  'booking-links',
+  'productivity',
+  'nextjs',
+  'typescript',
+  'fullstack',
+  'ui-ux',
+  'open-source',
 ];
 
+const VISIBLE_TOPIC_COUNT = 5;
+
 export default function Home() {
+  const [showAllTopics, setShowAllTopics] = useState(false);
+
   return (
     <main className="landing-shell">
       <section className="landing-hero">
@@ -48,12 +63,37 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="landing-highlights" aria-label="Platform highlights">
-            {highlights.map((item) => (
-              <span key={item} className="landing-chip">
-                {item}
-              </span>
-            ))}
+          <div className="landing-highlights-wrapper" aria-label="Community highlights">
+            <p className="landing-highlights-title">Community Highlights</p>
+            <div className="landing-highlights">
+              {repoTopics.slice(0, VISIBLE_TOPIC_COUNT).map((topic) => (
+                <span key={topic} className="landing-chip">
+                  #{topic}
+                </span>
+              ))}
+
+              <div className="landing-topics-expandable">
+                <button
+                  type="button"
+                  className="landing-chip landing-topics-toggle"
+                  onClick={() => setShowAllTopics((current) => !current)}
+                  aria-expanded={showAllTopics}
+                  aria-label={showAllTopics ? 'Show fewer topics' : 'Show more topics'}
+                >
+                  {showAllTopics ? 'Fewer topics' : 'More topics'}
+                </button>
+
+                {showAllTopics && (
+                  <div className="landing-topics-extra">
+                    {repoTopics.slice(VISIBLE_TOPIC_COUNT).map((topic) => (
+                      <span key={topic} className="landing-chip">
+                        #{topic}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
         </div>
 
