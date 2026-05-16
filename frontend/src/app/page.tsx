@@ -67,7 +67,9 @@ export default function Home() {
               ))}
 
               <details className="landing-topics-expandable">
-                <summary className="landing-chip landing-topics-toggle">More topics</summary>
+                <summary className="landing-chip landing-topics-toggle" aria-label="Show more topics">
+                  More topics
+                </summary>
                 <div className="landing-topics-extra">
                   {repoTopics.slice(visibleTopicCount).map((topic) => (
                     <span key={topic} className="landing-chip">
