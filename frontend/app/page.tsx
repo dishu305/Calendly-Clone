@@ -33,7 +33,7 @@ const repoTopics = [
   'open-source',
 ];
 
-const visibleTopicCount = 5;
+const VISIBLE_TOPIC_COUNT = 5;
 
 export default function Home() {
   const [showAllTopics, setShowAllTopics] = useState(false);
@@ -66,7 +66,7 @@ export default function Home() {
           <div className="landing-highlights-wrapper" aria-label="Community highlights">
             <p className="landing-highlights-title">Community Highlights</p>
             <div className="landing-highlights">
-              {repoTopics.slice(0, visibleTopicCount).map((topic) => (
+              {repoTopics.slice(0, VISIBLE_TOPIC_COUNT).map((topic) => (
                 <span key={topic} className="landing-chip">
                   #{topic}
                 </span>
@@ -85,7 +85,7 @@ export default function Home() {
 
                 {showAllTopics && (
                   <div className="landing-topics-extra">
-                    {repoTopics.slice(visibleTopicCount).map((topic) => (
+                    {repoTopics.slice(VISIBLE_TOPIC_COUNT).map((topic) => (
                       <span key={topic} className="landing-chip">
                         #{topic}
                       </span>
