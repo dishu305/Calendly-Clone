@@ -130,11 +130,23 @@ body {
   background: rgba(255, 250, 245, 0.92);
 }
 
+.landing-highlights-wrapper {
+  margin-top: 26px;
+}
+
+.landing-highlights-title {
+  margin: 0 0 10px;
+  color: var(--landing-accent-dark);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .landing-highlights {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 26px;
 }
 
 .landing-chip {
@@ -144,6 +156,30 @@ body {
   background: rgba(255, 250, 245, 0.55);
   color: var(--landing-ink);
   font-size: 0.94rem;
+}
+
+.landing-topics-expandable {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.landing-topics-toggle {
+  cursor: pointer;
+  list-style: none;
+  background: rgba(201, 111, 59, 0.14);
+  border-color: rgba(201, 111, 59, 0.28);
+  color: var(--landing-accent-dark);
+}
+
+.landing-topics-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.landing-topics-extra {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .landing-showcase {

@@ -16,11 +16,20 @@ const workflowSteps = [
   },
 ];
 
-const highlights = [
-  'Fast event setup',
-  'Public booking links',
-  'Clean scheduling flow',
+const repoTopics = [
+  'scheduling',
+  'calendar',
+  'availability',
+  'booking-links',
+  'productivity',
+  'nextjs',
+  'typescript',
+  'fullstack',
+  'ui-ux',
+  'open-source',
 ];
+
+const visibleTopicCount = 5;
 
 export default function Home() {
   return (
@@ -48,12 +57,26 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="landing-highlights" aria-label="Platform highlights">
-            {highlights.map((item) => (
-              <span key={item} className="landing-chip">
-                {item}
-              </span>
-            ))}
+          <div className="landing-highlights-wrapper" aria-label="Community highlights">
+            <p className="landing-highlights-title">Community Highlights</p>
+            <div className="landing-highlights">
+              {repoTopics.slice(0, visibleTopicCount).map((topic) => (
+                <span key={topic} className="landing-chip">
+                  #{topic}
+                </span>
+              ))}
+
+              <details className="landing-topics-expandable">
+                <summary className="landing-chip landing-topics-toggle">More topics</summary>
+                <div className="landing-topics-extra">
+                  {repoTopics.slice(visibleTopicCount).map((topic) => (
+                    <span key={topic} className="landing-chip">
+                      #{topic}
+                    </span>
+                  ))}
+                </div>
+              </details>
+            </div>
           </div>
         </div>
 
