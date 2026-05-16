@@ -174,7 +174,6 @@ body {
   display: none;
 }
 
-
 .landing-topics-toggle::after {
   content: '▾';
   margin-left: 8px;
