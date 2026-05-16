@@ -1,3 +1,7 @@
+'use client';
+
+import { useState } from 'react';
+
 const workflowSteps = [
   {
     number: '01',
@@ -32,6 +36,8 @@ const repoTopics = [
 const visibleTopicCount = 5;
 
 export default function Home() {
+  const [showAllTopics, setShowAllTopics] = useState(false);
+
   return (
     <main className="landing-shell">
       <section className="landing-hero">
@@ -66,18 +72,27 @@ export default function Home() {
                 </span>
               ))}
 
-              <details className="landing-topics-expandable">
-                <summary className="landing-chip landing-topics-toggle" aria-label="Show more topics">
-                  More topics
-                </summary>
-                <div className="landing-topics-extra">
-                  {repoTopics.slice(visibleTopicCount).map((topic) => (
-                    <span key={topic} className="landing-chip">
-                      #{topic}
-                    </span>
-                  ))}
-                </div>
-              </details>
+              <div className="landing-topics-expandable">
+                <button
+                  type="button"
+                  className="landing-chip landing-topics-toggle"
+                  onClick={() => setShowAllTopics((current) => !current)}
+                  aria-expanded={showAllTopics}
+                  aria-label={showAllTopics ? 'Show fewer topics' : 'Show more topics'}
+                >
+                  {showAllTopics ? 'Fewer topics' : 'More topics'}
+                </button>
+
+                {showAllTopics && (
+                  <div className="landing-topics-extra">
+                    {repoTopics.slice(visibleTopicCount).map((topic) => (
+                      <span key={topic} className="landing-chip">
+                        #{topic}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>

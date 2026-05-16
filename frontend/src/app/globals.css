@@ -166,14 +166,9 @@ body {
 
 .landing-topics-toggle {
   cursor: pointer;
-  list-style: none;
   background: rgba(201, 111, 59, 0.14);
   border-color: rgba(201, 111, 59, 0.28);
   color: var(--landing-accent-dark);
-}
-
-.landing-topics-toggle::-webkit-details-marker {
-  display: none;
 }
 
 .landing-topics-toggle::after {
@@ -183,7 +178,7 @@ body {
   transition: transform 180ms ease;
 }
 
-.landing-topics-expandable[open] .landing-topics-toggle::after {
+.landing-topics-toggle[aria-expanded='true']::after {
   transform: rotate(180deg);
 }
 
